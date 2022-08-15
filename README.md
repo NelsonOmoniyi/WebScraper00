@@ -1,2 +1,2 @@
 # WebScraper00
-Python web scarping script
+Python web scraping script
