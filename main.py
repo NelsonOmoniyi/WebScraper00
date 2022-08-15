@@ -17,12 +17,13 @@ html_req = requests.get('http://www.scrapethissite.com/pages/simple/').text
 soup = BeautifulSoup(html_req, 'lxml')
 countrys = soup.find_all('div', class_='col-md-4 country')
 for country in countrys:
-    country_name = country.find('h3', class_='country-name').text.replace(' ','')
+    country_name = country.find('h3', class_='country-name').text.replace(' ', '')
     capital = country.find('span', class_='country-capital').text
     population = country.find('span', class_='country-population').text
-    print(f'''Country name:{country_name}
-     Capital: {capital} 
-     Population Est: {population}''')
+    print(f'Country name:{country_name.strip()}')
+    print(f'Capital: {capital}')
+    print(f'Population Est: {population}')
+    print('-----------------------------------')
 
 
 
